@@ -58,9 +58,9 @@ class ViewController: UIViewController {
                                                         primaryAction: .init { [weak self] _ in self?.viewModel.sortByRandom() },
                                                         menu: nil)
         
-        let sortByDecendingButton: UIBarButtonItem = .init(title: nil,
+        let sortByDescendingButton: UIBarButtonItem = .init(title: nil,
                                                            image: UIImage(systemName: "arrow.up"),
-                                                           primaryAction: .init { [weak self] _ in self?.viewModel.sortByDecending() },
+                                                           primaryAction: .init { [weak self] _ in self?.viewModel.sortByDescending() },
                                                            menu: nil)
         
         let sortByAscendingButton: UIBarButtonItem = .init(title: nil,
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
                                                            menu: nil)
         
         navigationItem.leftBarButtonItems = [sortByRandomButton]
-        navigationItem.rightBarButtonItems = [sortByDecendingButton, sortByAscendingButton]
+        navigationItem.rightBarButtonItems = [sortByDescendingButton, sortByAscendingButton]
     }
     
     private func configureViewModel() {

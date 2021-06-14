@@ -71,7 +71,7 @@ class ViewModel {
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-    func sortByDecending() {
+    func sortByDescending() {
         var snapshot: Snapshot = snapshot
         
         snapshot.ssSortSections(by: >)

@@ -63,8 +63,8 @@
         [weakSelf.viewModel sortByRandom];
     }]];
     
-    UIBarButtonItem *sortByDecendingButton = [[UIBarButtonItem alloc] initWithPrimaryAction:[UIAction actionWithHandler:^(__kindof UIAction * _Nonnull action) {
-        [weakSelf.viewModel sortByDecending];
+    UIBarButtonItem *sortByDescendingButton = [[UIBarButtonItem alloc] initWithPrimaryAction:[UIAction actionWithHandler:^(__kindof UIAction * _Nonnull action) {
+        [weakSelf.viewModel sortByDescending];
     }]];
     
     UIBarButtonItem *sortByAscendingButton = [[UIBarButtonItem alloc] initWithPrimaryAction:[UIAction actionWithHandler:^(__kindof UIAction * _Nonnull action) {
@@ -72,11 +72,11 @@
     }]];
     
     sortByRandomButton.image = [UIImage systemImageNamed:@"shuffle"];
-    sortByDecendingButton.image = [UIImage systemImageNamed:@"arrow.up"];
+    sortByDescendingButton.image = [UIImage systemImageNamed:@"arrow.up"];
     sortByAscendingButton.image = [UIImage systemImageNamed:@"arrow.down"];
     
     self.navigationItem.leftBarButtonItems = @[sortByRandomButton];
-    self.navigationItem.rightBarButtonItems = @[sortByDecendingButton, sortByAscendingButton];
+    self.navigationItem.rightBarButtonItems = @[sortByDescendingButton, sortByAscendingButton];
 }
 
 - (void)configureViewModel {

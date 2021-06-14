@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSNumber * _Nullable )getSectionItemFromIndexPath:(NSIndexPath *)indexPath;
 - (void)configureInitialData;
 - (void)sortByRandom;
-- (void)sortByDecending;
+- (void)sortByDescending;
 - (void)sortByAscending;
 @end
 
