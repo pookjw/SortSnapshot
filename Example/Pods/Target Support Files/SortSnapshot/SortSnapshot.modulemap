@@ -1,0 +1,6 @@
+framework module SortSnapshot {
+  umbrella header "SortSnapshot-umbrella.h"
+
+  export *
+  module * { export * }
+}
