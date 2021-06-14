@@ -10,7 +10,7 @@ SortSnapshot extends sorting method to [NSDiffableDataSourceSnapshot](https://de
 ## Requirements
 
 - iOS 13.0 or later
-- macOS 10.15 or later
+- macOS 10.15.1 or later
 - tvOS 13.0 or later
 
 ## Installation
