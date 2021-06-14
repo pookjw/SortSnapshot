@@ -7,7 +7,7 @@
 
 #include <TargetConditionals.h>
 
-#if TARGET_OS_IOS || TARGET_OS_TVOS
+#if TARGET_OS_IOS || TARGET_OS_TV
 #import <UIKit/UIKit.h>
 #else
 #import <Cocoa/Cocoa.h>
