@@ -13,6 +13,15 @@
 - macOS 10.15 or later
 - tvOS 13.0 or later
 
+## Installation
+
+SortSnapshot is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'SortSnapshot'
+```
+
 ## Usage (Swift)
 
 ```swift
@@ -106,15 +115,6 @@ NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
 
 // ... apply to Data Source
 [self.dataSource applySnapshot:snapshot animatingDifferences:YES];
-```
-
-## Installation
-
-SortSnapshot is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'SortSnapshot'
 ```
 
 ## Author
