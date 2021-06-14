@@ -1,5 +1,5 @@
 PODS:
-  - SortSnapshot (1.4)
+  - SortSnapshot (1.5)
 
 DEPENDENCIES:
   - SortSnapshot (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SortSnapshot: 82d1ec4954897cd11c855a197a4085ef271c6cc3
+  SortSnapshot: 874ee2ecc7e999166d5d42ec8aec5d30c75b8cd0
 
 PODFILE CHECKSUM: 12b4a405b952eeff7a52a40e825fbc062fd0fc36
 
