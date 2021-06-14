@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SortSnapshot'
-  s.version          = '1.3'
+  s.version          = '1.4'
   s.summary          = 'Sorting methods for NSDiffableDataSourceSnapshot.'
 
 # This description is used to generate tags and improve search results.
