@@ -10,9 +10,9 @@
 #endif
 #endif
 
-#import <SortSnapshot/SortSnapshot+Items.h>
-#import <SortSnapshot/SortSnapshot+Sections.h>
-#import <SortSnapshot/_ssmacro.h>
+#import "SortSnapshot+Items.h"
+#import "SortSnapshot+Sections.h"
+#import "_ssmacro.h"
 
 FOUNDATION_EXPORT double SortSnapshotVersionNumber;
 FOUNDATION_EXPORT const unsigned char SortSnapshotVersionString[];

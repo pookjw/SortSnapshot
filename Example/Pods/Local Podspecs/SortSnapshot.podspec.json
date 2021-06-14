@@ -1,9 +1,9 @@
 {
   "name": "SortSnapshot",
-  "version": "1.0",
+  "version": "1.2",
   "summary": "Sorting methods for NSDiffableDataSourceSnapshot.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "hhttps://github.com/pookjw/SortSnapshot",
+  "homepage": "https://github.com/pookjw/SortSnapshot",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -13,10 +13,12 @@
   },
   "source": {
     "git": "https://github.com/pookjw/SortSnapshot.git",
-    "tag": "1.0"
+    "tag": "1.2"
   },
   "platforms": {
-    "ios": "13.0"
+    "ios": "13.0",
+    "osx": "10.15.1",
+    "tvos": "13.0"
   },
   "source_files": "SortSnapshot/Classes/**/*",
   "requires_arc": true
