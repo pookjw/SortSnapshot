@@ -12,7 +12,7 @@ import AppKit
 #endif
 
 extension NSDiffableDataSourceSnapshot {
-    mutating func ssSortSections(by areInIncreasingOrder: (SectionIdentifierType, SectionIdentifierType) -> Bool) {
+    public mutating func ssSortSections(by areInIncreasingOrder: (SectionIdentifierType, SectionIdentifierType) -> Bool) {
         var tmpSectionIdentifiers: [SectionIdentifierType] = sectionIdentifiers
         
         guard tmpSectionIdentifiers.count >= 2 else {
@@ -42,7 +42,7 @@ extension NSDiffableDataSourceSnapshot {
 }
 
 extension NSDiffableDataSourceSnapshot where SectionIdentifierType: Comparable {
-    mutating func ssSortSections() {
+    public mutating func ssSortSections() {
         ssSortSections(by: <)
     }
 }
@@ -50,7 +50,7 @@ extension NSDiffableDataSourceSnapshot where SectionIdentifierType: Comparable {
 #if IS_XCODE_13_OR_LATER
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 extension NSDiffableDataSourceSnapshot {
-    mutating func ssSortSections<T: SortComparator>(using comparator: T) where T.Compared == SectionIdentifierType {
+    public mutating func ssSortSections<T: SortComparator>(using comparator: T) where T.Compared == SectionIdentifierType {
         ssSortSections { first, second in
             let order: SortOrder = comparator.order
             let result: ComparisonResult = comparator.compare(first, second)

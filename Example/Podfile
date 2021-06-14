@@ -1,13 +1,9 @@
 use_frameworks!
 
-platform :ios, '9.0'
-
-target 'SortSnapshot_Example' do
+target 'SortSnapshotDemoObjC' do
   pod 'SortSnapshot', :path => '../'
+end
 
-  target 'SortSnapshot_Tests' do
-    inherit! :search_paths
-
-    
-  end
+target 'SortSnapshotDemoSwift' do
+  pod 'SortSnapshot', :path => '../'
 end

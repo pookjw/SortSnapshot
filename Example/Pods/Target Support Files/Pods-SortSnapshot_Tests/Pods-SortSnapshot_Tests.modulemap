@@ -1,6 +1,0 @@
-framework module Pods_SortSnapshot_Tests {
-  umbrella header "Pods-SortSnapshot_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

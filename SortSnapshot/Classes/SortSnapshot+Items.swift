@@ -12,7 +12,7 @@ import AppKit
 #endif
 
 extension NSDiffableDataSourceSnapshot {
-    mutating func ssSortItems(_ identifiers: [SectionIdentifierType], by areInIncreasingOrder: (ItemIdentifierType, ItemIdentifierType) -> Bool) {
+    public mutating func ssSortItems(_ identifiers: [SectionIdentifierType], by areInIncreasingOrder: (ItemIdentifierType, ItemIdentifierType) -> Bool) {
         for identifier in identifiers {
             var tmpItemIdentifiers: [ItemIdentifierType] = itemIdentifiers(inSection: identifier)
             
@@ -44,7 +44,7 @@ extension NSDiffableDataSourceSnapshot {
 }
 
 extension NSDiffableDataSourceSnapshot where ItemIdentifierType: Comparable {
-    mutating func ssSortItems(_ identifiers: [SectionIdentifierType]) {
+    public mutating func ssSortItems(_ identifiers: [SectionIdentifierType]) {
         ssSortItems(identifiers, by: <)
     }
 }
@@ -52,7 +52,7 @@ extension NSDiffableDataSourceSnapshot where ItemIdentifierType: Comparable {
 #if IS_XCODE_13_OR_LATER
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 extension NSDiffableDataSourceSnapshot {
-    mutating func ssSortItems<T: SortComparator>(_ identifiers: [SectionIdentifierType], using comparator: T) where T.Compared == ItemIdentifierType {
+    public mutating func ssSortItems<T: SortComparator>(_ identifiers: [SectionIdentifierType], using comparator: T) where T.Compared == ItemIdentifierType {
         ssSortItems(identifiers) { first, second in
             let order: SortOrder = comparator.order
             let result: ComparisonResult = comparator.compare(first, second)

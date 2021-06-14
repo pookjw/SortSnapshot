@@ -1,9 +1,9 @@
 {
   "name": "SortSnapshot",
-  "version": "0.1.0",
-  "summary": "A short description of SortSnapshot.",
+  "version": "1.0",
+  "summary": "Sorting methods for NSDiffableDataSourceSnapshot.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Jinwoo Kim/SortSnapshot",
+  "homepage": "hhttps://github.com/pookjw/SortSnapshot",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,12 @@
     "Jinwoo Kim": "kidjinwoo@me.com"
   },
   "source": {
-    "git": "https://github.com/Jinwoo Kim/SortSnapshot.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/pookjw/SortSnapshot.git",
+    "tag": "1.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "13.0"
   },
-  "source_files": "SortSnapshot/Classes/**/*"
+  "source_files": "SortSnapshot/Classes/**/*",
+  "requires_arc": true
 }
