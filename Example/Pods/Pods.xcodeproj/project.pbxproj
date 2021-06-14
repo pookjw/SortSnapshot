@@ -536,9 +536,9 @@
 			};
 			name = Debug;
 		};
-		6D87F6BDD9DB9A6FCD158A58F95D134C /* Release */ = {
+		601ADB9404041CF7E8D7B1C46692BA01 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC1880737510F50807DE3D658653A836 /* SortSnapshot.release.xcconfig */;
+			baseConfigurationReference = B3049942C35CD401C3BF54B46D54611F /* SortSnapshot.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -564,13 +564,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		70B89AC93B368D837BB4E1DBA1696C7F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -709,41 +708,6 @@
 			};
 			name = Debug;
 		};
-		A59530E278FB0187656A5C74F2C4AD29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3049942C35CD401C3BF54B46D54611F /* SortSnapshot.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SortSnapshot/SortSnapshot-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SortSnapshot/SortSnapshot-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SortSnapshot/SortSnapshot.modulemap";
-				PRODUCT_MODULE_NAME = SortSnapshot;
-				PRODUCT_NAME = SortSnapshot;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		AB65F74B104BCF06E2337A6E0261FBA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCFDC6D70765571AD1AF8FC3AFD9148D /* Pods-SortSnapshotDemoSwift.debug.xcconfig */;
@@ -781,6 +745,42 @@
 			};
 			name = Debug;
 		};
+		DDEDCB8928CA3A41CCB7754B7BD7DED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC1880737510F50807DE3D658653A836 /* SortSnapshot.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SortSnapshot/SortSnapshot-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SortSnapshot/SortSnapshot-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SortSnapshot/SortSnapshot.modulemap";
+				PRODUCT_MODULE_NAME = SortSnapshot;
+				PRODUCT_NAME = SortSnapshot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -805,8 +805,8 @@
 		D3EF1AF32BA47138B4C5C1371C20072C /* Build configuration list for PBXNativeTarget "SortSnapshot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A59530E278FB0187656A5C74F2C4AD29 /* Debug */,
-				6D87F6BDD9DB9A6FCD158A58F95D134C /* Release */,
+				601ADB9404041CF7E8D7B1C46692BA01 /* Debug */,
+				DDEDCB8928CA3A41CCB7754B7BD7DED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

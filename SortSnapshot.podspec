@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SortSnapshot'
-  s.version          = '1.6'
+  s.version          = '1.7'
   s.summary          = 'Sorting methods for NSDiffableDataSourceSnapshot.'
 
   s.description      = <<-DESC
