@@ -48,20 +48,6 @@ dataSource.apply(snapshot)
 ### Using NSComparator
 
 ```objective-c
-NSComparisonResult (^randomComparsionResult)(void) = ^NSComparisonResult{
-    uint32_t rand = arc4random_uniform(3) - 1;
-    switch (rand) {
-        case -1:
-            return NSOrderedAscending;
-        case 0:
-            return NSOrderedSame;
-        case 1:
-            return NSOrderedDescending;
-        default:
-            return NSOrderedSame;
-    }
-};
-
 NSDiffableDataSourceSnapshot *snapshot = self.dataSource.snapshot;
 
 // Ascending Sort
@@ -81,20 +67,6 @@ NSComparator descendingComparator = ^NSComparisonResult(NSNumber *obj1, NSNumber
 [snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingComparator:descendingComparator];
 
 // Random Sort
-NSComparator randomComparator = ^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
-    return randomComparsionResult();
-};
-    
-[snapshot ssSortSectionsUsingComparator:randomComparator];
-[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingComparator:randomComparator];
-
-// ... apply to Data Source
-[self.dataSource applySnapshot:snapshot animatingDifferences:YES];
-```
-
-### Using NSSortDescriptor
-
-```objective-c
 NSComparisonResult (^randomComparsionResult)(void) = ^NSComparisonResult{
     uint32_t rand = arc4random_uniform(3) - 1;
     switch (rand) {
@@ -109,37 +81,65 @@ NSComparisonResult (^randomComparsionResult)(void) = ^NSComparisonResult{
     }
 };
 
+NSComparator randomComparator = ^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
+    return randomComparsionResult();
+};
+    
+[snapshot ssSortSectionsUsingComparator:randomComparator];
+[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingComparator:randomComparator];
+
+// ... apply to Data Source
+[self.dataSource applySnapshot:snapshot animatingDifferences:YES];
+```
+
+### Using NSSortDescriptor
+
+```objective-c
 NSDiffableDataSourceSnapshot *snapshot = self.dataSource.snapshot;
 
 // Ascending Sort
-NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
+NSSortDescriptor *ascendingSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
                                                                    ascending:YES
                                                                   comparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
     return [obj1 compare:obj2];
 }];
     
-[snapshot ssSortSectionsUsingDescriptors:@[sortDescriptor]];
-[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingDescriptors:@[sortDescriptor]];
+[snapshot ssSortSectionsUsingDescriptors:@[ascendingSortDescriptor]];
+[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingDescriptors:@[ascendingSortDescriptor]];
 
 // Descending Sort
-NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
+NSSortDescriptor *descendingSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
                                                                    ascending:NO
                                                                   comparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
     return [obj1 compare:obj2];
 }];
     
-[snapshot ssSortSectionsUsingDescriptors:@[sortDescriptor]];
-[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingDescriptors:@[sortDescriptor]];
+[snapshot ssSortSectionsUsingDescriptors:@[descendingSortDescriptor]];
+[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingDescriptors:@[descendingSortDescriptor]];
 
 // Random Sort
- NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
+NSComparisonResult (^randomComparsionResult)(void) = ^NSComparisonResult{
+    uint32_t rand = arc4random_uniform(3) - 1;
+    switch (rand) {
+        case -1:
+            return NSOrderedAscending;
+        case 0:
+            return NSOrderedSame;
+        case 1:
+            return NSOrderedDescending;
+        default:
+            return NSOrderedSame;
+    }
+};
+
+NSSortDescriptor *randomSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
                                                                    ascending:NO
                                                                   comparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
     return randomComparsionResult();
 }];
 
-[snapshot ssSortSectionsUsingDescriptors:@[sortDescriptor]];
-[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingDescriptors:@[sortDescriptor]];
+[snapshot ssSortSectionsUsingDescriptors:@[randomSortDescriptor]];
+[snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingDescriptors:@[randomSortDescriptor]];
 
 // ... apply to Data Source
 [self.dataSource applySnapshot:snapshot animatingDifferences:YES];
