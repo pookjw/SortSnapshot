@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/cocoapods/l/SortSnapshot.svg?style=flat)](https://cocoapods.org/pods/SortSnapshot)
 [![Platform](https://img.shields.io/cocoapods/p/SortSnapshot.svg?style=flat)](https://cocoapods.org/pods/SortSnapshot)
 
-SortSnapshot extends sorting method to [NSDiffableDataSourceSnapshot](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot) and [NSDiffableDataSourceSnapshotReference](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot).
+SortSnapshot extends sorting method to [NSDiffableDataSourceSnapshot](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot) and [NSDiffableDataSourceSnapshotReference](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshotreference).
 
 ![](images/demo.gif)
 
