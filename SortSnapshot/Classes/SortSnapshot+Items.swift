@@ -49,7 +49,7 @@ extension NSDiffableDataSourceSnapshot where ItemIdentifierType: Comparable {
     }
 }
 
-#if IS_XCODE_13_OR_LATER
+#if IS_XCODE_13_OR_LATER && swift(>=5.5)
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 extension NSDiffableDataSourceSnapshot {
     public mutating func ssSortItems<T: SortComparator>(_ identifiers: [SectionIdentifierType], using comparator: T) where T.Compared == ItemIdentifierType {
