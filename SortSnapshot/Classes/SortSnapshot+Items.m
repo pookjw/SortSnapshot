@@ -57,7 +57,7 @@
     for (NSSortDescriptor *sortDescriptor in sortDescriptors) {
         NSComparator cmptr = ^NSComparisonResult(id obj1, id obj2){
             NSComparisonResult result = [sortDescriptor compareObject:obj1 toObject:obj2];
-            return result * (sortDescriptor.ascending ? 1L : -1L);
+            return result;
         };
         
         [self ssSortItemsWithIdentifiers:sectionIdentifiers usingComparator:cmptr];

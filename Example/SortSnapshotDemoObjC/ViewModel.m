@@ -10,6 +10,20 @@
 
 typedef NSDiffableDataSourceSnapshot Snapshot;
 
+NSComparisonResult (^randomComparsionResult)(void) = ^NSComparisonResult{
+    uint32_t rand = arc4random_uniform(3) - 1;
+    switch (rand) {
+        case -1:
+            return NSOrderedAscending;
+        case 0:
+            return NSOrderedSame;
+        case 1:
+            return NSOrderedDescending;
+        default:
+            return NSOrderedSame;
+    }
+};
+
 @interface ViewModel ()
 @property (nonatomic, readonly) Snapshot *snapshot;
 @end
@@ -71,7 +85,7 @@ typedef NSDiffableDataSourceSnapshot Snapshot;
     Snapshot *snapshot = self.snapshot;
 //
 //    NSComparator randomComparator = ^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
-//        return arc4random_uniform(3) - 1;
+//        return randomComparsionResult();
 //    };
 //
 //    [snapshot ssSortSectionsUsingComparator:randomComparator];
@@ -80,7 +94,7 @@ typedef NSDiffableDataSourceSnapshot Snapshot;
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
                                                                    ascending:NO
                                                                   comparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
-        return arc4random_uniform(3) - 1;
+        return randomComparsionResult();
     }];
 
     [snapshot ssSortSectionsUsingDescriptors:@[sortDescriptor]];
@@ -102,7 +116,7 @@ typedef NSDiffableDataSourceSnapshot Snapshot;
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
                                                                    ascending:NO
                                                                   comparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
-        return [obj2 compare:obj1];
+        return [obj1 compare:obj2];
     }];
     
     [snapshot ssSortSectionsUsingDescriptors:@[sortDescriptor]];
@@ -122,7 +136,7 @@ typedef NSDiffableDataSourceSnapshot Snapshot;
 //    [snapshot ssSortItemsWithIdentifiers:snapshot.sectionIdentifiers usingComparator:ascendingComparator];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self"
-                                                                   ascending:NO
+                                                                   ascending:YES
                                                                   comparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
         return [obj1 compare:obj2];
     }];
